@@ -22,5 +22,9 @@ function showWallText() {
     $(".artwork").removeClass("blur-out");
     $(".wall-text").removeClass("fade-out");
     wallTextVisible = !wallTextVisible;
+
+    setTimeout(function(){
+        showArtwork();
+    }, 20000)
 }
 
