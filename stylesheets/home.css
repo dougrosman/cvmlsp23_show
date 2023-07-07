@@ -93,41 +93,41 @@ canvas {
 }
 
 .work-link[data-name="ANNIE"] {
-    background-image: url(images/1.png);
+    background-image: url(../images/thumbs/1.png);
 }
 
 .work-link[data-name="CHLOE"] {
-    background-image: url(images/2.png);
+    background-image: url(../images/thumbs/2.png);
 }
 
-.work-link[data-name="EMRIS"] {
-    background-image: url(images/3.png);
+.work-link[data-name="EMRYS"] {
+    background-image: url(../images/thumbs/3.png);
 }
 
 .work-link[data-name="ERNEST"] {
-    background-image: url(images/4.png);
+    background-image: url(../images/thumbs/4.png);
 }
 
 .work-link[data-name="JUN"] {
-    background-image: url(images/5.png);
+    background-image: url(../images/thumbs/5.png);
 }
 
 .work-link[data-name="MEADOW"] {
-    background-image: url(images/6.png);
+    background-image: url(../images/thumbs/6.png);
 }
 
 .work-link[data-name="NICOLE"] {
-    background-image: url(images/7.png);
+    background-image: url(../images/thumbs/7.png);
 }
 
 .work-link[data-name="REID"] {
-    background-image: url(images/8.png);
+    background-image: url(../images/thumbs/8.png);
 }
 
 .work-link[data-name="THEO"] {
-    background-image: url(images/9.png);
+    background-image: url(../images/thumbs/9.png);
 }
 
 .work-link[data-name="ZECHEN"] {
-    background-image: url(images/10.png);
+    background-image: url(../images/thumbs/10.png);
 }
