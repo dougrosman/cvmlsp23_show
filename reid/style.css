@@ -16,10 +16,6 @@ body {
   color: var(--clr-light-text);
 }
 
-.artwork {
-  filter: blur(20px);
-}
-
 .wall-text__artist {
   color: var(--clr-light-text-accent);
 }
