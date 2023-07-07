@@ -1,0 +1,86 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+:root {
+  --clr-dark-text: hsl(0 0% 96%);
+  --clr-dark-text-accent: hsl(60 80% 70%);
+  --clr-dark-bg: hsl(0 0% 4%);
+  --clr-dark-link: hsl(60 100% 50%);
+
+  --ff-headings: "Azeret Mono", monospace;
+  --ff-body: "Archivo", sans-serif;
+
+  --fs-100: clamp(0.48rem, calc(0.89rem + -0.53vw), 0.78rem);
+  --fs-200: clamp(0.77rem, calc(0.99rem + -0.29vw), 0.94rem);
+  --fs-300: clamp(1.13rem, calc(1.08rem + 0.22vw), 1.25rem);
+  --fs-400: clamp(1.35rem, calc(1.12rem + 1.17vw), 2.02rem);
+  --fs-500: clamp(1.62rem, calc(1.05rem + 2.87vw), 3.27rem);
+  --fs-600: clamp(1.94rem, calc(0.78rem + 5.83vw), 5.3rem);
+  --fs-700: clamp(2.33rem, calc(0.16rem + 10.84vw), 8.57rem);
+  --fs-800: clamp(2.8rem, calc(-1.05rem + 19.24vw), 13.86rem);
+}
+
+body {
+  color: var(--clr-dark-text);
+  background-color: var(--clr-dark-bg);
+
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+}
+
+/* WALL TEXT */
+
+.wall-text {
+    display: grid;
+    place-items: center;
+    z-index: 1;
+}
+
+.wall-text__content {
+    width: min(100% - 3rem, fit-content);
+    /* outline: 2px solid red; */
+}
+
+.wall-text__title {
+    font-family: var(--ff-headings);
+    font-size: var(--fs-700);
+    font-style: italic;
+    line-height: 0.9;
+}
+
+.wall-text__artist {
+    font-size: var(--fs-500);
+    font-weight: 700;
+    margin-bottom: .5em;
+    color: var(--clr-dark-text-accent);
+}
+
+.wall-text__medium,
+.wall-text__materials {
+    font-size: var(--fs-400);
+}
+
+a {
+  color: var(--clr-dark-accent);
+}
+
+p {
+    line-height: 1.5;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+.wrapper {
+    position: absolute;
+    inset: 0;
+}

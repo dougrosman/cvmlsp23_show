@@ -1,0 +1,25 @@
+:root {
+  --clr-light-text: hsl(0 0% 5%);
+  --clr-light-text-accent: hsl(0 0% 30%);
+  --clr-light-bg: hsl(0 0% 4%);
+  --clr-light-link: hsl(60 100% 50%);
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+body {
+  background-color: #fff;
+  color: var(--clr-light-text);
+}
+
+.artwork {
+  filter: blur(20px);
+}
+
+.wall-text__artist {
+  color: var(--clr-light-text-accent);
+}

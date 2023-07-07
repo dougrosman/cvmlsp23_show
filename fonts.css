@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Bruno Ace SC";
+    src: url("fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Azeret Mono";
+    src: url("fonts/Azeret_Mono/AzeretMono-VariableFont_wght.ttf");
+    font-style: normal;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: "Azeret Mono";
+    src: url("fonts/Azeret_Mono/AzeretMono-Italic-VariableFont_wght.ttf");
+    font-style: italic;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("fonts/Archivo/Archivo-VariableFont_wdth\,wght.ttf");
+    font-style: normal;
+    font-weight: 100 900;
+}
+
+@font-face {
+    font-family: "Archivo";
+    src: url("fonts/Archivo/Archivo-Italic-VariableFont_wdth\,wght.ttf");
+    font-style: italic;
+    font-weight: 100 900;
+}
