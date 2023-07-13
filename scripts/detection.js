@@ -1,8 +1,8 @@
 let detections = {};
 const videoElement = document.getElementsByClassName('input_video')[0];
 
-const cam_w = 320;
-const cam_h = 240;
+const cam_w = 640;
+const cam_h = 480;
 
 function gotHands(results) {
   detections = results;

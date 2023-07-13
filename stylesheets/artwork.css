@@ -93,20 +93,20 @@ img, video {
 
 .fade-in {
   opacity: 1;
-  transition: opacity 1s linear;
+  transition: opacity .5s linear;
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity 1s linear;
+  transition: opacity .5s linear;
 }
 
 .blur-in {
   filter: blur(20px);
-  transition: filter 1s linear;
+  transition: filter .5s linear;
 }
 
 .blur-out {
   filter: blur(0px);
-  transition: filter 1s linear;
+  transition: filter .5s linear;
 }

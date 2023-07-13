@@ -7,9 +7,15 @@
 let clickedCounter = 0;
 
 let sketch = function (p) {
+  p.preload = function () {
+    font = p.loadFont("../../fonts/Poppins-Medium.ttf");
+  };
   p.setup = function () {
     p.createCanvas(cam_w, cam_h, p.WEBGL);
     p.setAttributes({ alpha: true });
+    p.textFont(font);
+    p.textAlign(p.CENTER);
+    p.textSize(12);
     p.pixelDensity(1);
   };
 
@@ -43,23 +49,19 @@ let sketch = function (p) {
       INDEX_TIP_2.z
     );
 
-    const INDEX_TIP_DISTANCE = INDEX1.dist(INDEX2)
+    const INDEX_TIP_DISTANCE = INDEX1.dist(INDEX2);
 
     const INDEX_TIP_MIDPOINT = INDEX1.lerp(INDEX2, 0.5);
 
     if (INDEX_TIP_DISTANCE < 15) {
-        p.noFill();
-        p.stroke(0, 255, 0);
-        p.ellipse(INDEX_TIP_MIDPOINT.x, INDEX_TIP_MIDPOINT.y, 20);
-        
-        // toggleWallText();
-      } else {
-        // toggleWallText();
-      }
+      showWallText();
+    } else {
+      hideWallText();
+    }
   };
 
   p.drawHands = function () {
-    p.strokeWeight(4);
+    p.strokeWeight(8);
 
     for (let i = 0; i < detections.multiHandLandmarks.length; i++) {
       const THUMB_TIP = detections.multiHandLandmarks[0][4];
@@ -86,6 +88,8 @@ let sketch = function (p) {
         p.noFill();
         p.stroke(0, 255, 0);
         p.ellipse(selectPointVector.x, selectPointVector.y, clickedCounter / 4);
+        p.fill(0, 255, 0);
+        p.text("Back\nto\nhome", selectPointVector.x, selectPointVector.y)
         clickedCounter += 4;
 
         if (clickedCounter > 300) {
@@ -106,8 +110,6 @@ let sketch = function (p) {
 
 let myp5 = new p5(sketch);
 
-
-
 // show or hide wall text
 let wallTextVisible = false;
 
@@ -119,19 +121,18 @@ let wallTextVisible = false;
 //   }
 // });
 
-
 function showWallText() {
-    $(".artwork").addClass("blur-in");
-    $(".wall-text").addClass("fade-in");
-    $(".artwork").removeClass("blur-out");
-    $(".wall-text").removeClass("fade-out");
-    wallTextVisible = !wallTextVisible;
+  $(".artwork").addClass("blur-in");
+  $(".wall-text").addClass("fade-in");
+  $(".artwork").removeClass("blur-out");
+  $(".wall-text").removeClass("fade-out");
+  wallTextVisible = !wallTextVisible;
 }
 
 function hideWallText() {
-    $(".artwork").addClass("blur-out");
-    $(".wall-text").addClass("fade-out");
-    $(".artwork").removeClass("blur-in");
-    $(".wall-text").removeClass("fade-in");
-    wallTextVisible = !wallTextVisible;
+  $(".artwork").addClass("blur-out");
+  $(".wall-text").addClass("fade-out");
+  $(".artwork").removeClass("blur-in");
+  $(".wall-text").removeClass("fade-in");
+  wallTextVisible = !wallTextVisible;
 }
