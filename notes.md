@@ -12,3 +12,8 @@
 - Option 1: 
 
 
+1. Finish each individual page
+2. Implement Default Behaviors:
+   1. Each page cycles to the next work in order after completion of work (e.g. end of video, or after certain amount of time)
+   2. Home page can be returned to with finger pinch
+   3. Wall text can be summoned by touching fingers together

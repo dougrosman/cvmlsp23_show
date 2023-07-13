@@ -25,10 +25,6 @@ video {
     display: none;
 }
 
-canvas {
-    /* z-index: -1; */
-}
-
 .gallery-menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 600px), 1fr));

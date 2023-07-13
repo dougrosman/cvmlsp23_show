@@ -1,62 +1,83 @@
-p, h1, h2, h3, h4, h5, h6 {
-    font-family: monospace;
-    color: blue;
+/* cursors */
+* {
+  cursor: url("7332598(1).cur"), auto !important;
+  margin: unset;
 }
 
-/* cursors */
-  * {
-    cursor: url("7332598(1).cur"), 
-    auto !important;
-  }
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: monospace;
+  color: blue;
+  text-wrap: balance;
+}
+
+
+p, h3 {
+  font-size: calc(1rem + 1vw);
+  
+}
+
+body {
+  padding: 24rem 0;
+}
+
+video {
+  display: none;
+}
 
 #background-grid {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: blue;
-    background-image: url('f.gif');
-    z-index: -1;
-  }
-  
-  #background-grid .cell {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  #background-grid .cell.alive {
-    background-color: #333;
-  }
-  
-  #content {
-    margin-top: 100px;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .block {
-    margin: 50px auto;
-    width: 80%;
-    max-width: 800px;
-  }
-  
-  .block img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
-  
-  .block h2 {
-    margin-top: 20px;
-    font-size: 2em;
-  }
-  
-  .block p {
-    margin-top: 10px;
-    font-size: 1.1em;
-    line-height: 1.5;
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  background-image: url("f.gif");
+  z-index: -1;
+}
+
+#background-grid .cell {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+#background-grid .cell.alive {
+  background-color: #333;
+}
+
+#content {
+  margin-top: 100px;
+  align-items: center;
+  text-align: center;
+}
+
+.block {
+  margin: 50px auto;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.block h2 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.block p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
