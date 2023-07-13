@@ -38,17 +38,9 @@ let sketch = function (p) {
         for (let j = 0; j < detections.multiHandLandmarks[i].length; j++) {
           const currentPoint = detections.multiHandLandmarks[i][j];
           p.stroke(0, 0, 255);
-          const currentPointVector = p.createVector(
-            p.width - currentPoint.x * p.width,
-            currentPoint.y * p.height,
-            currentPoint.z
-          );
+          const currentPointVector = p.createVector(p.width - currentPoint.x * p.width, currentPoint.y * p.height, currentPoint.z);
 
-          p.point(
-            currentPointVector.x,
-            currentPointVector.y,
-            currentPointVector.z
-          );
+          p.point(currentPointVector.x, currentPointVector.y, currentPointVector.z);
         }
       }
     }
@@ -56,19 +48,11 @@ let sketch = function (p) {
     for (let i = 0; i < detections.multiHandLandmarks.length; i++) {
       const THUMB_TIP = detections.multiHandLandmarks[0][4];
 
-      const THUMB = p.createVector(
-        p.width - THUMB_TIP.x * p.width,
-        THUMB_TIP.y * p.height,
-        THUMB_TIP.z
-      );
+      const THUMB = p.createVector(p.width - THUMB_TIP.x * p.width, THUMB_TIP.y * p.height, THUMB_TIP.z);
 
       const INDEX_FINGER_TIP = detections.multiHandLandmarks[0][8];
 
-      const INDEX = p.createVector(
-        p.width - INDEX_FINGER_TIP.x * p.width,
-        INDEX_FINGER_TIP.y * p.height,
-        INDEX_FINGER_TIP.z
-      );
+      const INDEX = p.createVector(p.width - INDEX_FINGER_TIP.x * p.width, INDEX_FINGER_TIP.y * p.height, INDEX_FINGER_TIP.z);
 
       p.stroke(255, 0, 0);
       p.point(INDEX.x, INDEX.y, INDEX.z);
@@ -88,11 +72,7 @@ let sketch = function (p) {
       // p.strokeWeight(4 + (clickedCounter/5));
       //p.imageMode(p.CENTER);
       p.noFill();
-      p.ellipse(
-        selectPointVector.x,
-        selectPointVector.y,
-        3 + clickedCounter / 4
-      );
+      p.ellipse(selectPointVector.x, selectPointVector.y, 3 + clickedCounter / 4);
       // p.text(
       //   `${Math.floor(selectPoint.x)}, ${Math.floor(selectPoint.y)}`,
       //   selectPointVector.x,
@@ -119,12 +99,7 @@ let myp5 = new p5(sketch);
 window.addEventListener("mousemove", function (e) {
   links.forEach((link) => {
     const linkBox = link.getBoundingClientRect();
-    if (
-      e.clientX > linkBox.x &&
-      e.clientX < linkBox.x + linkBox.width &&
-      e.clientY > linkBox.y &&
-      e.clientY < linkBox.y + linkBox.height
-    ) {
+    if (e.clientX > linkBox.x && e.clientX < linkBox.x + linkBox.width && e.clientY > linkBox.y && e.clientY < linkBox.y + linkBox.height) {
       link.style.filter = "grayscale(100%)";
       // const currentLink = link.getAttribute("href");
       // window.location.href = currentLink;
@@ -138,12 +113,7 @@ window.addEventListener("mousemove", function (e) {
 window.addEventListener("click", function (e) {
   links.forEach((link) => {
     const linkBox = link.getBoundingClientRect();
-    if (
-      e.clientX > linkBox.x &&
-      e.clientX < linkBox.x + linkBox.width &&
-      e.clientY > linkBox.y &&
-      e.clientY < linkBox.y + linkBox.height
-    ) {
+    if (e.clientX > linkBox.x && e.clientX < linkBox.x + linkBox.width && e.clientY > linkBox.y && e.clientY < linkBox.y + linkBox.height) {
       const currentLink = link.getAttribute("href");
       window.location.href = currentLink;
     } else {
@@ -155,13 +125,8 @@ window.addEventListener("click", function (e) {
 function fingerSelect(selectPoint) {
   links.forEach((link) => {
     const linkBox = link.getBoundingClientRect();
-    if (
-      selectPoint.x > linkBox.x &&
-      selectPoint.x < linkBox.x + linkBox.width &&
-      selectPoint.y > linkBox.y &&
-      selectPoint.y < linkBox.y + linkBox.height
-    ) {
-      link.style.filter = "contrast(10)";
+    if (selectPoint.x > linkBox.x && selectPoint.x < linkBox.x + linkBox.width && selectPoint.y > linkBox.y && selectPoint.y < linkBox.y + linkBox.height) {
+      link.style.filter = "grayscale(100%)";
       const currentLink = link.getAttribute("href");
 
       if (currentLink != clickedLink) {
