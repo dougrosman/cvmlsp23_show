@@ -12,7 +12,7 @@
     <script src="../../lib/hands.js"></script>
 
     <script src="../../scripts/detection.js" defer></script>
-    <script src="../../scripts/navigation.js" defer></script>
+    <!-- <script src="../../scripts/navigation.js" defer></script> -->
     <script src="bg.js" defer></script>
 
     <link rel="stylesheet" href="../../stylesheets/fonts.css">
@@ -24,38 +24,30 @@
   <body>
     <div class="wrapper wall-text">
       <div class="wall-text__content">
-        <h1 class="wall-text__title">Dual Encounter II</h1>
+        <h1 class="wall-text__title">Reflections on the Machine</h1>
         <p class="wall-text__artist">Emris Brandt</p>
+        <br>
         <p class="wall-text__socialmedia">
-          <a href="https://www.instagram.com/erneststrauhal/ "
-            >instagram.com/erneststrauhal</a
-          ><br />
-          <a href="https://studio.strauh.al ">studio.strauh.al</a>
+          <a href="https://www.instagram.com/attentionrobotman/">instagram.com/attentionrobotman</a>
+          
+          <br />
+          
+          <a href="https://moneymachine69.github.io/maps_pix2pix_poems">moneymachine69.github.io/maps_pix2pix_poems</a>
         </p>
-        <br /><br />
-        <p class="wall-text__medium">Looping video, 5:05</p>
-        <p class="wall-text__materials">
-          pix2pix trained Model, StyleGAN2 trained model
-        </p>
+
+        <br>
+        
+        <p class="wall-text__medium">Text and image</p>
         <br />
         <p class="wall-text__statement">
-          This StyleGAN interpolation is created by scraping through datasets of
-          my life from the past 3 years and applying a canny edge filter to each
-          photograph. The canny edge filters and photographs are fed into
-          Pix2Pix and the results are overlaid over my drawings.
-          <br /><br />
-          Just as events and preoccupations in my day-to-day life influence each
-          drawing, small imperceptible details in the photos from my life inform
-          the texture of the Pix2Pix output. The nature of the improvised hand
-          drawn compositions combined with the unpredictable output from Pix2Pix
-          compound into unstable, vibrant landscapes.
+          A reflection on the relationship between AI generated content and self-driving cars. In poetry format.
         </p>
       </div>
     </div>
 
     <video class="input_video"></video>
 
-    <div class="wrapper artwork">
+    
       <div id="background-grid"></div>
       
       <div id="content">
@@ -133,7 +125,7 @@
           </div>
         </div>
       </div>
-    </div>
+    
     <script>
       window.addEventListener("load", function () {
         function scrollPage() {
@@ -157,8 +149,8 @@
               clearInterval(scrollInterval); // Stop scrolling
               setTimeout(function(){
 
-                //window.location.href = "../ernest"
-              }, 20000)
+                window.location.href = "../ernest"
+              }, 10000)
             } else {
               // Scroll the page by 1 pixel
               window.scrollBy(0, 1);
@@ -169,6 +161,144 @@
         // Call the scrollPage function to start scrolling
         scrollPage();
       });
+    </script>
+
+    <script>
+      // BEHAVIOR FOR EACH PAGE
+
+// DETECT HANDS FOR FINGER PINCH
+
+// DETECT HANDS FOR FINGERS TOUCHING
+
+let clickedCounter = 0;
+
+let sketch = function (p) {
+  p.preload = function () {
+    font = p.loadFont("../../fonts/Poppins-Medium.ttf");
+  };
+  p.setup = function () {
+    p.createCanvas(cam_w, cam_h, p.WEBGL);
+    p.setAttributes({ alpha: true });
+    p.textFont(font);
+    p.textAlign(p.CENTER);
+    p.textSize(12);
+    p.pixelDensity(1);
+  };
+
+  p.draw = function () {
+    p.clear(0);
+    p.translate(-p.width / 2, -p.height / 2);
+
+    if (detections != undefined) {
+      if (detections.multiHandLandmarks != undefined) {
+        p.drawHands();
+        if (detections.multiHandLandmarks.length == 2) {
+          p.drawFingerTips();
+        }
+      }
+    }
+  };
+
+  p.drawFingerTips = function () {
+    const INDEX_TIP_1 = detections.multiHandLandmarks[0][8];
+    const INDEX_TIP_2 = detections.multiHandLandmarks[1][8];
+
+    const INDEX1 = p.createVector(
+      p.width - INDEX_TIP_1.x * p.width,
+      INDEX_TIP_1.y * p.height,
+      INDEX_TIP_1.z
+    );
+
+    const INDEX2 = p.createVector(
+      p.width - INDEX_TIP_2.x * p.width,
+      INDEX_TIP_2.y * p.height,
+      INDEX_TIP_2.z
+    );
+
+    const INDEX_TIP_DISTANCE = INDEX1.dist(INDEX2);
+
+    const INDEX_TIP_MIDPOINT = INDEX1.lerp(INDEX2, 0.5);
+
+    if (INDEX_TIP_DISTANCE < 15) {
+      showWallText();
+    } else {
+      hideWallText();
+    }
+  };
+
+  p.drawHands = function () {
+    p.strokeWeight(4);
+
+    for (let i = 0; i < detections.multiHandLandmarks.length; i++) {
+      const THUMB_TIP = detections.multiHandLandmarks[0][4];
+
+      const THUMB = p.createVector(
+        p.width - THUMB_TIP.x * p.width,
+        THUMB_TIP.y * p.height,
+        THUMB_TIP.z
+      );
+
+      const INDEX_FINGER_TIP = detections.multiHandLandmarks[0][8];
+
+      const INDEX = p.createVector(
+        p.width - INDEX_FINGER_TIP.x * p.width,
+        INDEX_FINGER_TIP.y * p.height,
+        INDEX_FINGER_TIP.z
+      );
+
+      const FINGER_DISTANCE = THUMB.dist(INDEX);
+
+      const selectPointVector = THUMB.lerp(INDEX, 0.5);
+
+      if (FINGER_DISTANCE < 15) {
+        p.fill(0);
+        p.stroke(0, 255, 0);
+        p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
+        p.fill(255, 255, 255);
+        p.text("Back\nto\nmenu", selectPointVector.x, selectPointVector.y - 10)
+        clickedCounter += 4;
+
+        if (clickedCounter > 300) {
+          window.location.href = "../../index.html";
+
+          clickedCounter = 0;
+        }
+      } else {
+        clickedCounter = 0;
+        clickedLink = "";
+      }
+    }
+  };
+};
+
+// window.addEventListener("mousemove", function(){
+// })
+
+let myp5 = new p5(sketch);
+
+// show or hide wall text
+let wallTextVisible = false;
+
+// $(window).click(function () {
+//   if (wallTextVisible) {
+//     showArtwork();
+//   } else {
+//     showWallText();
+//   }
+// });
+
+function showWallText() {
+  $(".wall-text").addClass("fade-in");
+  $(".wall-text").removeClass("fade-out");
+  wallTextVisible = !wallTextVisible;
+}
+
+function hideWallText() {
+  $(".wall-text").addClass("fade-out");
+  $(".wall-text").removeClass("fade-in");
+  wallTextVisible = !wallTextVisible;
+}
+
     </script>
   </body>
 </html>

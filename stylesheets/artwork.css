@@ -61,7 +61,7 @@ img, video {
 .wall-text {
   display: grid;
   place-items: center;
-  /* z-index: 1; */
+  z-index: 1;
   opacity: 0;
   box-sizing: border-box;
   background-color: #000a;

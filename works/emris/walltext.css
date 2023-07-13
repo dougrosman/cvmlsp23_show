@@ -17,8 +17,8 @@
   --fs-800: clamp(2.8rem, calc(-1.05rem + 19.24vw), 13.86rem);
 }
 
-.wrapper.artwork {
-  position: static;
+body {
+  line-height: 1.5;
 }
 
 .wall-text {
@@ -28,11 +28,12 @@
   box-sizing: border-box;
   background-color: #000a;
   position: fixed;
-    inset: 0;
+  inset: 0;
+  z-index: 1;
 }
 
 .wall-text__content {
-  width: min(100% - 3rem, 64ch);
+  width: min(100% - 3rem, 84ch);
   padding: 1em;
 }
 
@@ -46,6 +47,7 @@
 
 .wall-text__artist {
   font-size: var(--fs-500);
+  font-family: var(--ff-body);
   font-weight: 700;
   color: var(--clr-dark-text-accent);
 }
@@ -61,32 +63,31 @@
   font-size: var(--fs-300);
   font-family: var(--ff-body);
   color: var(--clr-dark-text);
+  line-height: 1.5;
 }
 
-.wall-text__socialmedia {
+.wall-text__socialmedia a {
   font-size: var(--fs-300);
   font-family: var(--ff-body);
-  color: var(--clr-dark-text);
+  color: var(--clr-dark-text) !important;
 }
-
-
 
 .fade-in {
   opacity: 1;
-  transition: opacity .5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .fade-out {
   opacity: 0;
-  transition: opacity .5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .blur-in {
   filter: blur(20px);
-  transition: filter .5s linear;
+  transition: filter 0.5s linear;
 }
 
 .blur-out {
   filter: blur(0px);
-  transition: filter .5s linear;
+  transition: filter 0.5s linear;
 }
