@@ -2,6 +2,8 @@
 // https://google.github.io/mediapipe/solutions/hands.html
 // Adapted from "Multiple Hands Detection in p5.js" by Kazuki Umeda (https://www.youtube.com/watch?v=BX8ibqq0MJU)
 
+let clickedCounter = 0;
+
 let sketch = function (p) {
   let nails;
   let eye;
