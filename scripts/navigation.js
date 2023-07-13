@@ -89,7 +89,7 @@ let sketch = function (p) {
         p.stroke(0, 255, 0);
         p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
         p.fill(255, 0, 0);
-        p.text("Back\nto\nhome", selectPointVector.x, selectPointVector.y - 10)
+        p.text("Back\nto\nmenu", selectPointVector.x, selectPointVector.y - 10)
         clickedCounter += 4;
 
         if (clickedCounter > 300) {

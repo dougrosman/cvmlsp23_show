@@ -27,7 +27,7 @@ video {
 
 .gallery-menu {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 600px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
     /* grid-template-columns: 1fr 1fr; */
 
     /* display: flex;
@@ -36,8 +36,9 @@ video {
 }
 .work-link {
     /* width: fit-content; */
-    font-size: calc(4rem + 2vw);
+    font-size: calc(3.5rem + 2vw);
     text-align: center;
+    padding: .25em;
     
     text-decoration: none;
 
@@ -54,6 +55,17 @@ video {
                  3px 3px #0f0,
                  4px 4px #0f0,
                  -4px -4px #0f0; */
+}
+
+h1.work-link {
+    font-weight: unset;
+    font-size: calc(1rem + 1vw);
+    padding: 1em;
+    line-height: 1.5;
+    text-shadow: unset;
+    color: white;
+    background-color: black;
+    text-wrap: balance;
 }
 
 .work-link:hover {
