@@ -92,7 +92,7 @@ let sketch = function (p) {
 
       const selectPointVector = THUMB.lerp(INDEX, 0.5);
 
-      if (FINGER_DISTANCE < 60) {
+      if (FINGER_DISTANCE < 10) {
         p.fill(0);
         p.stroke(0, 255, 0);
         p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
@@ -176,7 +176,7 @@ let sketch = function (p) {
 
     const INDEX_TIP_MIDPOINT = INDEX1.lerp(INDEX2, 0.5);
 
-    if (INDEX_TIP_DISTANCE < 50) {
+    if (INDEX_TIP_DISTANCE < 10) {
       showWallText();
     } else {
       hideWallText();
