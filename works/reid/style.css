@@ -19,8 +19,3 @@ body {
 .wall-text__artist {
   color: var(--clr-light-text-accent);
 }
-
-#reidVideo {
-  opacity: 1;
-  transition: opacity 1s;
-}

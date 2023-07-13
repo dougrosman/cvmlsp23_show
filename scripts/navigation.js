@@ -85,10 +85,10 @@ let sketch = function (p) {
       const selectPointVector = THUMB.lerp(INDEX, 0.5);
 
       if (FINGER_DISTANCE < 15) {
-        p.noFill();
+        p.fill(0);
         p.stroke(0, 255, 0);
         p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
-        p.fill(255, 0, 0);
+        p.fill(255, 255, 255);
         p.text("Back\nto\nmenu", selectPointVector.x, selectPointVector.y - 10)
         clickedCounter += 4;
 
