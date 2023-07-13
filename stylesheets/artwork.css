@@ -63,10 +63,12 @@ img, video {
   place-items: center;
   z-index: 1;
   opacity: 0;
+  box-sizing: border-box;
 }
 
 .wall-text__content {
-  width: min(100% - 3rem, fit-content);
+  width: min(100% - 3rem, 70ch);
+  padding: 1em;
   /* outline: 2px solid red; */
 }
 
@@ -80,13 +82,16 @@ img, video {
 .wall-text__artist {
   font-size: var(--fs-500);
   font-weight: 700;
-  margin-bottom: .5em;
   color: var(--clr-dark-text-accent);
 }
 
 .wall-text__medium,
 .wall-text__materials {
   font-size: var(--fs-400);
+}
+
+.wall-text__socialmedia {
+  font-size: var(--fs-300);
 }
 
 /* UTILITIES */

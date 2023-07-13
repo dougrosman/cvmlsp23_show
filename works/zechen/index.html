@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="../../lib/jquery-3.7.0.min.js"></script>
+    <script src="../../lib/p5.min.js"></script>
+    <script src="../../lib/camera_utils.js"></script>
+    <script src="../../lib/control_utils.js"></script>
+    <script src="../../lib/drawing_utils.js"></script>
+    <script src="../../lib/hands.js"></script>
+
+    <script src="../../scripts/detection.js" defer></script>
+    <script src="../../scripts/navigation.js" defer></script>
+
+    <link rel="stylesheet" href="../../stylesheets/fonts.css" />
+    <link rel="stylesheet" href="../../stylesheets/artwork.css" />
+    <link rel="stylesheet" href="../../stylesheets/navigation.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Zechen Li</title>
+  </head>
+  <body>
+    <video class="input_video"></video>
+    <div class="wrapper wall-text">
+      <div class="wall-text__content">
+        <h1 class="wall-text__title">Between Us</h1>
+        <p class="wall-text__artist">Zechen Li</p>
+        <p class="wall-text__socialmedia"><a href="https://www.instagram.com/lukyaezc/">instagram.com/lukyaezc</a><br>
+        <a href="https://vimeo.com/zechenli">vimeo.com/zechenl</a></p>
+        <br><br>
+        <p class="wall-text__medium">Looping video, 5:00</p>
+        <p class="wall-text__materials">StyleGAN2 trained model</p>
+        <br>
+        <p class="wall-text__statement">A video that captures the physical and emotional intensity between two people in a moment of intimacy.</p>
+      </div>
+    </div>
+
+    <div class="wrapper artwork">
+        <video id="zechenVideo" src="zechen.mp4" autoplay playsinline></video>
+    </div>
+    
+    <script>
+      reidVideo.onended = (event) => {
+        setTimeout(function() {
+          window.location.href = "../emris"
+        }, 5000)
+      }
+    </script>
+  </body>
+</html>
