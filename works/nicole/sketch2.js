@@ -46,10 +46,12 @@ let sketch = function (p) {
 
       if (detections.leftHandLandmarks != undefined) {
         p.drawHand(detections.leftHandLandmarks);
+        p.drawBackToMenuHandsLeft();
       }
 
       if (detections.rightHandLandmarks != undefined) {
         p.drawHand(detections.rightHandLandmarks);
+        p.drawBackToMenuHandsRight()
       }
 
       if(detections.rightHandLandmarks != undefined && detections.leftHandLandmarks != undefined) {
@@ -63,6 +65,95 @@ let sketch = function (p) {
     }
   };
 
+  // GO BACK TO MENU LEFT
+  p.drawBackToMenuHandsLeft = function () {
+    p.strokeWeight(8);
+
+    
+      const THUMB_TIP = detections.leftHandLandmarks[4];
+
+      const THUMB = p.createVector(
+        p.width - THUMB_TIP.x * p.width,
+        THUMB_TIP.y * p.height,
+        THUMB_TIP.z
+      );
+
+      const INDEX_FINGER_TIP = detections.leftHandLandmarks[8];
+
+      const INDEX = p.createVector(
+        p.width - INDEX_FINGER_TIP.x * p.width,
+        INDEX_FINGER_TIP.y * p.height,
+        INDEX_FINGER_TIP.z
+      );
+
+      const FINGER_DISTANCE = THUMB.dist(INDEX);
+
+      const selectPointVector = THUMB.lerp(INDEX, 0.5);
+
+      if (FINGER_DISTANCE < 60) {
+        p.fill(0);
+        p.stroke(0, 255, 0);
+        p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
+        p.fill(255, 255, 255);
+        p.text("Back\nto\nmenu", selectPointVector.x, selectPointVector.y - 10)
+        clickedCounter += 4;
+
+        if (clickedCounter > 300) {
+          window.location.href = "../../index.html";
+
+          clickedCounter = 0;
+        }
+      } else {
+        clickedCounter = 0;
+        clickedLink = "";
+      }
+  };
+
+  // GO BACK TO MENU RIGHT
+  p.drawBackToMenuHandsRight = function () {
+    p.strokeWeight(16);
+
+    
+      const THUMB_TIP = detections.rightHandLandmarks[4];
+
+      const THUMB = p.createVector(
+        p.width - THUMB_TIP.x * p.width,
+        THUMB_TIP.y * p.height,
+        THUMB_TIP.z
+      );
+
+      const INDEX_FINGER_TIP = detections.rightHandLandmarks[8];
+
+      const INDEX = p.createVector(
+        p.width - INDEX_FINGER_TIP.x * p.width,
+        INDEX_FINGER_TIP.y * p.height,
+        INDEX_FINGER_TIP.z
+      );
+
+      const FINGER_DISTANCE = THUMB.dist(INDEX);
+
+      const selectPointVector = THUMB.lerp(INDEX, 0.5);
+
+      if (FINGER_DISTANCE < 60) {
+        p.fill(0);
+        p.stroke(0, 255, 0);
+        p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
+        p.fill(255, 255, 255);
+        p.text("Back\nto\nmenu", selectPointVector.x, selectPointVector.y - 10)
+        clickedCounter += 4;
+
+        if (clickedCounter > 300) {
+          window.location.href = "../../index.html";
+
+          clickedCounter = 0;
+        }
+      } else {
+        clickedCounter = 0;
+        clickedLink = "";
+      }
+  };
+
+  // SEE MORE INFO
   p.drawFingerTips = function () {
     const INDEX_TIP_1 = detections.leftHandLandmarks[8];
     const INDEX_TIP_2 = detections.rightHandLandmarks[8];
@@ -83,7 +174,7 @@ let sketch = function (p) {
 
     const INDEX_TIP_MIDPOINT = INDEX1.lerp(INDEX2, 0.5);
 
-    if (INDEX_TIP_DISTANCE < 15) {
+    if (INDEX_TIP_DISTANCE < 50) {
       showWallText();
     } else {
       hideWallText();
@@ -264,10 +355,10 @@ let myp5 = new p5(sketch);
 setTimeout(function() {
 
 //   // refresh the page by setting the URL to what the URL already is.
-window.location.href = window.location.href;
+window.location.href = "../reid";
 
  //num milliseconds between page refreshes
- }, 900000);
+ }, 20000);
 
 
 
