@@ -8,6 +8,6 @@ canvas {
     /* z-index: -1; */
 }
 
-video {
+.input_video {
     display: none;
 }

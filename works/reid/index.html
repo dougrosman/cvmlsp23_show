@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <script src="../../lib/jquery-3.7.0.min.js"></script>
+    <script src="../../lib/p5.min.js"></script>
+    <script src="../../lib/camera_utils.js"></script>
+    <script src="../../lib/control_utils.js"></script>
+    <script src="../../lib/drawing_utils.js"></script>
+    <script src="../../lib/hands.js"></script>
+
+    <script src="../../scripts/detection.js" defer></script>
+    <script src="../../scripts/navigation.js" defer></script>
+
     <link rel="stylesheet" href="../../stylesheets/fonts.css" />
     <link rel="stylesheet" href="../../stylesheets/artwork.css" />
+    <link rel="stylesheet" href="../../stylesheets/navigation.css">
     <link rel="stylesheet" href="style.css">
-    <script src="../../lib/jquery-3.7.0.min.js"></script>
-    <script src="../../scripts/fade-test.js" defer></script>
     <title>Reid Arowood</title>
   </head>
   <body>
+    <video class="input_video"></video>
     <div class="wrapper wall-text">
       <div class="wall-text__content">
         <h1 class="wall-text__title">Untitled</h1>
@@ -21,7 +32,7 @@
     </div>
 
     <div class="wrapper artwork">
-        <video src="reid_untitled.mp4" autoplay loop muted playsinline></video>
+        <video src="reid.mp4" autoplay loop muted playsinline></video>
     </div>
   </body>
 </html>
