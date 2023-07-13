@@ -36,10 +36,7 @@
     </div>
     
     <script>
-      reidVideo.playbackRate = 16;
       reidVideo.onended = (event) => {
-        console.log("ended")
-        reidVideo.style.opacity = 0;
         setTimeout(function() {
           window.location.href = "../zechen"
         }, 5000)

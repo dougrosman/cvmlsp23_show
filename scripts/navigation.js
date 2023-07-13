@@ -61,7 +61,7 @@ let sketch = function (p) {
   };
 
   p.drawHands = function () {
-    p.strokeWeight(8);
+    p.strokeWeight(4);
 
     for (let i = 0; i < detections.multiHandLandmarks.length; i++) {
       const THUMB_TIP = detections.multiHandLandmarks[0][4];
@@ -87,9 +87,9 @@ let sketch = function (p) {
       if (FINGER_DISTANCE < 15) {
         p.noFill();
         p.stroke(0, 255, 0);
-        p.ellipse(selectPointVector.x, selectPointVector.y, clickedCounter / 4);
-        p.fill(0, 255, 0);
-        p.text("Back\nto\nhome", selectPointVector.x, selectPointVector.y)
+        p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
+        p.fill(255, 0, 0);
+        p.text("Back\nto\nhome", selectPointVector.x, selectPointVector.y - 10)
         clickedCounter += 4;
 
         if (clickedCounter > 300) {

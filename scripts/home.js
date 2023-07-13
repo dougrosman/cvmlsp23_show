@@ -72,7 +72,7 @@ let sketch = function (p) {
       // p.strokeWeight(4 + (clickedCounter/5));
       //p.imageMode(p.CENTER);
       p.noFill();
-      p.ellipse(selectPointVector.x, selectPointVector.y, 3 + clickedCounter / 4);
+      p.ellipse(selectPointVector.x, selectPointVector.y, p.map(clickedCounter, 0, 300, 120, 0));
       // p.text(
       //   `${Math.floor(selectPoint.x)}, ${Math.floor(selectPoint.y)}`,
       //   selectPointVector.x,
@@ -136,7 +136,7 @@ function fingerSelect(selectPoint) {
         clickedCounter += 4;
       }
 
-      if (clickedCounter > 360) {
+      if (clickedCounter > 300) {
         window.location.href = currentLink;
 
         clickedCounter = 4;
