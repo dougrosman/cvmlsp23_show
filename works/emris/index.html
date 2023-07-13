@@ -141,11 +141,13 @@
           // Scroll the page down slowly
           let scrollInterval = setInterval(function () {
             // Check if we have reached the target position
+            //console.log(targetPosition, window.pageYOffset + window.innerHeight + 0.5)
             if (
-              window.pageYOffset >= targetPosition ||
+              window.pageYOffset + window.innerHeight + 0.5 >= targetPosition ||
               window.innerHeight + window.pageYOffset >=
                 document.body.offsetHeight
             ) {
+              console.log("ok")
               clearInterval(scrollInterval); // Stop scrolling
               setTimeout(function(){
 

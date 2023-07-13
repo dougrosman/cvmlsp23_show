@@ -52,9 +52,41 @@ let sketch = function (p) {
         p.drawHand(detections.rightHandLandmarks);
       }
 
+      if(detections.rightHandLandmarks != undefined && detections.leftHandLandmarks != undefined) {
+        p.drawFingerTips();
+        console.log("ok")
+      }
+
       if (detections.poseLandmarks != undefined) {
         p.drawPose(detections.poseLandmarks);
       }
+    }
+  };
+
+  p.drawFingerTips = function () {
+    const INDEX_TIP_1 = detections.leftHandLandmarks[8];
+    const INDEX_TIP_2 = detections.rightHandLandmarks[8];
+
+    const INDEX1 = p.createVector(
+      p.width - INDEX_TIP_1.x * p.width,
+      INDEX_TIP_1.y * p.height,
+      INDEX_TIP_1.z
+    );
+
+    const INDEX2 = p.createVector(
+      p.width - INDEX_TIP_2.x * p.width,
+      INDEX_TIP_2.y * p.height,
+      INDEX_TIP_2.z
+    );
+
+    const INDEX_TIP_DISTANCE = INDEX1.dist(INDEX2);
+
+    const INDEX_TIP_MIDPOINT = INDEX1.lerp(INDEX2, 0.5);
+
+    if (INDEX_TIP_DISTANCE < 15) {
+      showWallText();
+    } else {
+      hideWallText();
     }
   };
 
@@ -236,3 +268,21 @@ window.location.href = window.location.href;
 
  //num milliseconds between page refreshes
  }, 900000);
+
+
+
+ function showWallText() {
+  $(".artwork").addClass("blur-in");
+  $(".wall-text").addClass("fade-in");
+  $(".artwork").removeClass("blur-out");
+  $(".wall-text").removeClass("fade-out");
+  
+}
+
+function hideWallText() {
+  $(".artwork").addClass("blur-out");
+  $(".wall-text").addClass("fade-out");
+  $(".artwork").removeClass("blur-in");
+  $(".wall-text").removeClass("fade-in");
+  
+}
