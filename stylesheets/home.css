@@ -1,7 +1,3 @@
-@font-face {
-    font-family: "Bruno Ace SC";
-    src: url("fonts/Bruno_Ace_SC/BrunoAceSC-Regular.ttf")
-}
 
 
 * {
@@ -11,7 +7,7 @@
 }
 
 body {
-    font-family: Bruno Ace SC;
+    font-family: Azeret Mono;
     cursor: pointer;
 }
 
@@ -35,8 +31,8 @@ canvas {
 
 .gallery-menu {
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr)); */
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 600px), 1fr));
+    /* grid-template-columns: 1fr 1fr; */
 
     /* display: flex;
     flex-direction: column; */
@@ -44,7 +40,7 @@ canvas {
 }
 .work-link {
     /* width: fit-content; */
-    font-size: calc(1rem + 2vw);
+    font-size: calc(4rem + 2vw);
     text-align: center;
     
     text-decoration: none;
@@ -56,6 +52,7 @@ canvas {
     place-items: center;
     color: #fff;
     text-shadow: 0 0 10px #000;
+    transition: filter .125s;
     /* text-shadow: 1px 1px #0f0,
                  2px 2px #0f0,
                  3px 3px #0f0,
@@ -64,7 +61,7 @@ canvas {
 }
 
 .work-link:hover {
-    filter: contrast(10)
+    filter: grayscale(100%);
 }
 
 /* .work-link span {
@@ -92,42 +89,42 @@ canvas {
     background-color: #fffa;
 }
 
-.work-link[data-name="ANNIE"] {
+/* .work-link[data-name="ANNIE"] {
     background-image: url(../images/thumbs/1.png);
-}
+} */
 
-.work-link[data-name="CHLOE"] {
+/* .work-link[data-name="CHLOE"] {
     background-image: url(../images/thumbs/2.png);
-}
+} */
 
-.work-link[data-name="EMRYS"] {
-    background-image: url(../images/thumbs/3.png);
+.work-link[data-name="EMRIS"] {
+    background-image: url(../images/thumbs/emris.jpg);
 }
 
 .work-link[data-name="ERNEST"] {
-    background-image: url(../images/thumbs/4.png);
+    background-image: url(../images/thumbs/ernest.jpg);
 }
 
-.work-link[data-name="JUN"] {
+/* .work-link[data-name="JUN"] {
     background-image: url(../images/thumbs/5.png);
-}
+} */
 
-.work-link[data-name="MEADOW"] {
+/* .work-link[data-name="MEADOW"] {
     background-image: url(../images/thumbs/6.png);
-}
+} */
 
 .work-link[data-name="NICOLE"] {
-    background-image: url(../images/thumbs/7.png);
+    background-image: url(../images/thumbs/nicole.jpg);
 }
 
 .work-link[data-name="REID"] {
-    background-image: url(../images/thumbs/8.png);
+    background-image: url(../images/thumbs/reid.jpg);
 }
 
-.work-link[data-name="THEO"] {
+/* .work-link[data-name="THEO"] {
     background-image: url(../images/thumbs/9.png);
-}
+} */
 
 .work-link[data-name="ZECHEN"] {
-    background-image: url(../images/thumbs/10.png);
+    background-image: url(../images/thumbs/zechen.jpg);
 }

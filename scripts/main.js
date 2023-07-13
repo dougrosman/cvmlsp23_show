@@ -125,9 +125,9 @@ window.addEventListener("mousemove", function (e) {
       e.clientY > linkBox.y &&
       e.clientY < linkBox.y + linkBox.height
     ) {
-      link.style.filter = "contrast(10)";
-      const currentLink = link.getAttribute("href");
-      //window.location.href = "placeholder";
+      link.style.filter = "grayscale(100%)";
+      // const currentLink = link.getAttribute("href");
+      // window.location.href = currentLink;
     } else {
       link.style.filter = "unset";
     }
@@ -144,8 +144,8 @@ window.addEventListener("click", function (e) {
       e.clientY > linkBox.y &&
       e.clientY < linkBox.y + linkBox.height
     ) {
-      
-      window.location.href = "placeholder";
+      const currentLink = link.getAttribute("href");
+      window.location.href = currentLink;
     } else {
       link.style.filter = "unset";
     }
@@ -172,7 +172,7 @@ function fingerSelect(selectPoint) {
       }
 
       if (clickedCounter > 360) {
-        window.location.href = "placeholder";
+        window.location.href = currentLink;
 
         clickedCounter = 4;
       }
