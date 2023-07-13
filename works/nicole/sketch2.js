@@ -358,7 +358,7 @@ setTimeout(function() {
 window.location.href = "../reid";
 
  //num milliseconds between page refreshes
- }, 20000);
+ }, 300000);
 
 
 
