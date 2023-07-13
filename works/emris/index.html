@@ -17,84 +17,119 @@
 
     <link rel="stylesheet" href="../../stylesheets/fonts.css">
     <link rel="stylesheet" href="../../stylesheets/navigation.css" />
-    <link rel="stylesheet" href="../../stylesheets/artwork.css">
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="walltext.css">
     <title>Sat2Map</title>
   </head>
   <body>
-    <video class="input_video"></video>
-    <div id="background-grid"></div>
-    <div id="content">
-      <div class="block">
-        <p style="background-color: rgb(255, 255, 255); opacity: 0.8">
-          the process of image building as a machine fascinates me. <br />these
-          generated images are not maps. they do not, nor will they ever, function as
-          maps in the traditional sense. they are instead indicators of a
-          network and system that both <br />flattens and expands.
+    <div class="wrapper wall-text">
+      <div class="wall-text__content">
+        <h1 class="wall-text__title">Dual Encounter II</h1>
+        <p class="wall-text__artist">Emris Brandt</p>
+        <p class="wall-text__socialmedia">
+          <a href="https://www.instagram.com/erneststrauhal/ "
+            >instagram.com/erneststrauhal</a
+          ><br />
+          <a href="https://studio.strauh.al ">studio.strauh.al</a>
         </p>
-        <img src="outputCollage2.jpg" />
-        <div style="background-color: rgb(255, 255, 255); opacity: 0.8">
-          <h3>
-            isn't flattening and expanding what maps do? <br /><i
-              >reducing everything down, but also taking a single thing and
-              expanding it
-            </i>
-          </h3>
-        </div>
+        <br /><br />
+        <p class="wall-text__medium">Looping video, 5:05</p>
+        <p class="wall-text__materials">
+          pix2pix trained Model, StyleGAN2 trained model
+        </p>
+        <br />
+        <p class="wall-text__statement">
+          This StyleGAN interpolation is created by scraping through datasets of
+          my life from the past 3 years and applying a canny edge filter to each
+          photograph. The canny edge filters and photographs are fed into
+          Pix2Pix and the results are overlaid over my drawings.
+          <br /><br />
+          Just as events and preoccupations in my day-to-day life influence each
+          drawing, small imperceptible details in the photos from my life inform
+          the texture of the Pix2Pix output. The nature of the improvised hand
+          drawn compositions combined with the unpredictable output from Pix2Pix
+          compound into unstable, vibrant landscapes.
+        </p>
+      </div>
+    </div>
+
+    <video class="input_video"></video>
+
+    <div class="wrapper artwork">
+      <div id="background-grid"></div>
+      
+      <div id="content">
         <div class="block">
-          <img src="ogmap.png" />
-          <div style="background-color: rgb(174, 214, 165); opacity: 0.8">
-            <p>
-              i notice how much of machine generated images, videos, and
-              realities are in service of self-driving cars. content is created
-              as data for these cars, and the machines that run them. <br /><i
-                >(it is turtles all the way down)</i
-              ><br /><br />
-              to generate videos, like
-              <a href="https://youtu.be/3A3OuTdsPEk?t=209">dash-cam videos</a>,
-              you predict typical scenes and patterns. you can then multiply the
-              possibilities and train with them. to learn to generate a map, you
-              learn how to make new ones by learning typicality, and respond to
-              new landscapes. (that is the hope at least).
-            </p>
+          <p style="background-color: rgb(255, 255, 255); opacity: 0.8">
+            the process of image building as a machine fascinates me. <br />these
+            generated images are not maps. they do not, nor will they ever, function as
+            maps in the traditional sense. they are instead indicators of a
+            network and system that both <br />flattens and expands.
+          </p>
+          <img src="outputCollage2.jpg" />
+          <div style="background-color: rgb(255, 255, 255); opacity: 0.8">
+            <h3>
+              isn't flattening and expanding what maps do? <br /><i
+                >reducing everything down, but also taking a single thing and
+                expanding it
+              </i>
+            </h3>
           </div>
-        </div>
-        <div class="block">
-          <img src="outputMap0.jpg" />
-          <div style="background-color: antiquewhite; opacity: 0.8">
-            <p>
-              within a map, the world is delineated into three colors
-              <p><b>
-                {urban: beige, forest: green, water:blue}</b
-              ></p>
+          <div class="block">
+            <img src="ogmap.png" />
+            <div style="background-color: rgb(174, 214, 165); opacity: 0.8">
               <p>
-                roads, the access points for cars, the place you (the
-                machine) can be, are white.
+                i notice how much of machine generated images, videos, and
+                realities are in service of self-driving cars. content is created
+                as data for these cars, and the machines that run them. <br /><i
+                  >(it is turtles all the way down)</i
+                ><br /><br />
+                to generate videos, like
+                <a href="https://youtu.be/3A3OuTdsPEk?t=209">dash-cam videos</a>,
+                you predict typical scenes and patterns. you can then multiply the
+                possibilities and train with them. to learn to generate a map, you
+                learn how to make new ones by learning typicality, and respond to
+                new landscapes. (that is the hope at least).
               </p>
-              
-            </p>
+            </div>
           </div>
-        </div>
-        <div class="block">
-          <img src="outputDouble.jpg" />
-          <div style="background-color: rgb(177, 206, 240); opacity: 0.8">
-            <p>
-              cars do not need to run through the forest, or the ocean. in these
-              world(s) that the cars live in, the forests are contained.<br />
-              or they are
-              <a href="https://stopcop.city/"
-                >replaced with something that serves the cars</a
-              >. <br />or they are simply gone.
-            </p>
+          <div class="block">
+            <img src="outputMap0.jpg" />
+            <div style="background-color: antiquewhite; opacity: 0.8">
+              <p>
+                within a map, the world is delineated into three colors
+                <p><b>
+                  {urban: beige, forest: green, water:blue}</b
+                ></p>
+                <p>
+                  roads, the access points for cars, the place you (the
+                  machine) can be, are white.
+                </p>
+      
+              </p>
+            </div>
           </div>
-          <div style="background-color: rgb(177, 206, 240); opacity: 0.8">
-            <p>
-              where do we fit in to the world of machines? where do i fit,
-              except, economically, as physician or trainer, realistically as
-              fodder, and simply as a breeding ground for soft technologies of
-              industry and control?<br />
-              where do the forests fit in?
-            </p>
+          <div class="block">
+            <img src="outputDouble.jpg" />
+            <div style="background-color: rgb(177, 206, 240); opacity: 0.8">
+              <p>
+                cars do not need to run through the forest, or the ocean. in these
+                world(s) that the cars live in, the forests are contained.<br />
+                or they are
+                <a href="https://stopcop.city/"
+                  >replaced with something that serves the cars</a
+                >. <br />or they are simply gone.
+              </p>
+            </div>
+            <div style="background-color: rgb(177, 206, 240); opacity: 0.8">
+              <p>
+                where do we fit in to the world of machines? where do i fit,
+                except, economically, as physician or trainer, realistically as
+                fodder, and simply as a breeding ground for soft technologies of
+                industry and control?<br />
+                where do the forests fit in?
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -103,7 +138,7 @@
       window.addEventListener("load", function () {
         function scrollPage() {
           // Set the scroll speed (in milliseconds)
-          let scrollSpeed = 25;
+          let scrollSpeed = 15;
 
           // Get the current vertical scroll position
           let currentPosition = window.pageYOffset;
@@ -122,8 +157,8 @@
               clearInterval(scrollInterval); // Stop scrolling
               setTimeout(function(){
 
-                window.location.href = "../ernest"
-              }, 8000)
+                //window.location.href = "../ernest"
+              }, 20000)
             } else {
               // Scroll the page by 1 pixel
               window.scrollBy(0, 1);
