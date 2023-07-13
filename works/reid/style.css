@@ -1,8 +1,9 @@
 :root {
   --clr-light-text: hsl(0 0% 5%);
-  --clr-light-text-accent: hsl(0 0% 30%);
+  /* --clr-light-text-accent: hsl(0 0% 30%); */
   --clr-light-bg: hsl(0 0% 4%);
   --clr-light-link: hsl(60 100% 50%);
+  --clr-dark-text-accent: hsl(60 80% 70%);
 }
 
 video {
@@ -17,5 +18,5 @@ body {
 }
 
 .wall-text__artist {
-  color: var(--clr-light-text-accent);
+  color: var(--clr-dark-text-accent);
 }
