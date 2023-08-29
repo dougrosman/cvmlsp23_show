@@ -105,8 +105,8 @@ h1.work-link {
     background-image: url(../images/thumbs/2.png);
 } */
 
-.work-link[data-name="EMRIS"] {
-    background-image: url(../images/thumbs/emris.jpg);
+.work-link[data-name="EMRYS"] {
+    background-image: url(../images/thumbs/emrys.jpg);
 }
 
 .work-link[data-name="ERNEST"] {
